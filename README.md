@@ -7,16 +7,13 @@ Projet de réveil interactif faite par des collégiens de 3ème durant le semain
 ---
 
 # Instalation
-Carte Wemos D1 mini ESP8266
-Lien du gestionnaire de carte ESP8266 à rajouter dans les préférences
-http://arduino.esp8266.com/stable/package_esp8266com_index.json
-
-Librairies Arduino utilisé dans le projet.
-
-EEPROM
-Adafruit NeoPixel
-ArduinoJson
-Bounce2
+- Installer le logiciel arduino [lien](https://www.arduino.cc/en/Main/Software)
+- Installer le plugin pour la carte Wemos D1 mini (ESP8266). Suivre l'étape 1 du tutoriel suivant : [lien](https://projetsdiy.fr/programmer-esp8266-ide-arduino-librairies-gpio-web-serveur-client/)
+- Ajouter les bibliotèques suivantes (suivre ce tutoriel [lien](https://www.arduino.cc/en/Guide/Libraries))
+  - EEPROM
+  - Adafruit NeoPixel
+  - ArduinoJson
+  - Bounce2
 
 # Dessin SVG
 La maquette de la maison est basée sur le modèle de [elzekool](https://www.thingiverse.com/elzekool)
