@@ -6,7 +6,7 @@ Projet de réveil interactif faite par des collégiens de 3ème durant le semain
 
 ---
 
-# Instalation
+# Installation
 - Installer le logiciel arduino [lien](https://www.arduino.cc/en/Main/Software)
 - Installer le plugin pour la carte Wemos D1 mini (ESP8266). Suivre l'étape 1 du tutoriel suivant : [lien](https://projetsdiy.fr/programmer-esp8266-ide-arduino-librairies-gpio-web-serveur-client/)
 - Ajouter les bibliotèques suivantes (suivre ce tutoriel [lien](https://www.arduino.cc/en/Guide/Libraries))
