@@ -5,6 +5,20 @@
 Projet de réveil interactif faite par des collégiens de 3ème durant le semaine de découverte du Labex Persyval-Lab
 
 ---
+# Configuration
+- Installez le logiciel arduino [lien](https://www.arduino.cc/en/Main/Software)
+- Branchez le reveil � un ordinateur
+- Dans arduino choisissez le port COM (Menu -> Outils -> Port)
+- Ouvrez le moniteur s�rie (la petite loupe � gauche)
+- Dans la nouvelle fen�tre en bas � droite, changez 9600 baud par 115200 baud
+- Avec un �quipement wifi (ordinateur, t�l�phone, tablette) connectez vous au r�seau r�veiliot
+- Ouvrez un navigateur � l'adresse http://192.168.4.1/
+- Suivez les instructions pour configurer le wifi. 
+- Une fois effectu�, regardez dans le moniteur s�rie Arduino et trouvez une ligne "IP address: 192.168.X.X" (Exemple 192.168.1.100)
+- Si elle n'apparait pas, fermez et r�ouvrez le moniteur et appuyez sur la porte de la maison
+- Retenez cette adresse.
+- Vous pouvez d�sormais configurer le r�veil en allant � l'adresse http://192.168.X.X/ depuis un �quipement connect� au r�seau du domicile 
+
 
 # Installation
 - Installer le logiciel arduino [lien](https://www.arduino.cc/en/Main/Software)
