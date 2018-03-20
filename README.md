@@ -14,6 +14,7 @@ Projet de réveil interactif faite par des collégiens de 3ème durant le semain
   - Adafruit NeoPixel
   - ArduinoJson
   - Bounce2
+  - WifiManager
 
 # Dessin SVG
 La maquette de la maison est basée sur le modèle de [elzekool](https://www.thingiverse.com/elzekool)

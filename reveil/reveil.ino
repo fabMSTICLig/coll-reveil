@@ -6,6 +6,7 @@
 #include <ESP8266mDNS.h>
 #include <EEPROM.h>
 #include <Bounce2.h>
+#include <WiFiManager.h>          //https://github.com/tzapu/WiFiManager
 
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
@@ -30,7 +31,7 @@ int heure=0;
 int minute=0;
 int aheure=0;
 int aminute=0;
-int state=3;
+int state=0;
 
 #define EEPROMAHEURE 0
 #define EEPROMAMINUTE 1
@@ -154,6 +155,16 @@ void handleSetAlarme() {
   }
 }
 
+
+// wifi manager callback function
+void configModeCallback (WiFiManager *myWiFiManager) {
+  Serial.println("Entered config mode");
+  Serial.println(WiFi.softAPIP());
+  //if you used auto generated SSID, print it
+  Serial.println(myWiFiManager->getConfigPortalSSID());
+}
+
+
 void setup(void){
   
 #if defined (__AVR_ATtiny85__)
@@ -171,7 +182,21 @@ void setup(void){
   debouncer.interval(5); // interval in ms
   
   Serial.begin(115200);
-  WiFi.begin(ssid, password);
+
+  WiFiManager wifiManager;
+  //reset settings - for testing
+  //wifiManager.resetSettings();
+
+  //set callback that gets called when connecting to previous WiFi fails, and enters Access Point mode
+  wifiManager.setAPCallback(configModeCallback);
+  if(!wifiManager.autoConnect("reveiliot")) 
+  {
+    //reset and try again, or maybe put it to deep sleep
+    ESP.reset();
+    delay(1000);
+  } 
+  
+  /*WiFi.begin(ssid, password);
   Serial.println("");
 
   // Wait for connection
@@ -181,7 +206,7 @@ void setup(void){
   }
   Serial.println("");
   Serial.print("Connected to ");
-  Serial.println(ssid);
+  Serial.println(ssid);*/
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
@@ -228,6 +253,13 @@ void loop(void){
   {
     startsynctime=millis();
     syncHeure();
+  }
+  if(state<3)
+  {
+    if ( debouncer.rose() ) {
+      Serial.print("IP address: ");
+      Serial.println(WiFi.localIP());
+    }
   }
   if(state>=2)
   {
